@@ -7,8 +7,11 @@ package com.poly.it17326.group1.domainmodel;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -30,14 +33,16 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Position implements Serializable{
+public class Position implements Serializable {
 
     @Id
     @Column(name = "id")
-    private String id;
+    @GeneratedValue
+    private UUID id;
 
     @Column(name = "position_code")
-    private String positionCode;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer positionCode;
 
     @Column(name = "position_name")
     private String positionName;

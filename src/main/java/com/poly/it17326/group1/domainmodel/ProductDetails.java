@@ -8,9 +8,11 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -37,41 +39,41 @@ public class ProductDetails implements Serializable {
 
     @Id
     @Column(name = "id")
-    private String id;
+    @GeneratedValue
+    private UUID id;
 
-    @Column(name = "product_details_id")
+    @Column(name = "product_details_code")
     private String productDetailsCode;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_category")
     private Category category;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @ManyToOne
     @JoinColumn(name = "id_color")
     private Color color;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @ManyToOne
     @JoinColumn(name = "id_product")
     private Product product;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @ManyToOne
     @JoinColumn(name = "id_fabric")
     private Fabric fabric;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @ManyToOne
     @JoinColumn(name = "id_unit")
     private Unit unit;
-
-    @Column(name = "")
-    private int quantity;
 
     @Column(name = "price")
     private BigDecimal price;
 
+    @Column(name = "figure")
+    private int figure;
+
     @Column(name = "description")
     private String description;
 
-    @Column(name = "product_active")
+    @Column(name = "active")
     private Boolean active;
 
     @Column(name = "created")
@@ -90,7 +92,10 @@ public class ProductDetails implements Serializable {
 
 //    @OneToMany(mappedBy = "productDetails")
 //    private List<OderDetails> listOrderDetails;
-
     @OneToMany(mappedBy = "productDetails")
     private List<Images> listImages;
+
+    public Object[] toDataRow() {
+        return new Object[]{productDetailsCode, product.getProductName(), category.getCategoryName(), color.getColorName(), fabric.getFabricName(), unit.getUnitName(), price, figure};
+    }
 }

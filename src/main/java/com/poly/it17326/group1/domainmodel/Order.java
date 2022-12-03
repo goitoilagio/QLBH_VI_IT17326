@@ -5,10 +5,13 @@
 package com.poly.it17326.group1.domainmodel;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,7 +31,7 @@ import lombok.ToString;
  * @author goito
  */
 @Entity
-@Table(name = "Order")
+@Table(name = "Oder")
 @Setter
 @Getter
 @AllArgsConstructor
@@ -38,11 +41,12 @@ public class Order implements Serializable {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue()
+    private UUID id;
 
-    @Column(name = "oder_code")
-    private String oderCode;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_code")
+    private Integer orderCode;
 
     @ManyToOne
     @JoinColumn(name = "id_account")
@@ -52,6 +56,10 @@ public class Order implements Serializable {
     @JoinColumn(name = "id_customer")
     private Customer customer;
 
+    @Column(name = "total_money")
+    private BigDecimal totalMoney;
+
+    @Column(name = "created")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created;
 
@@ -59,7 +67,7 @@ public class Order implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date paymentDate;
 
-    @Column(name = "oder_date")
+    @Column(name = "order_date")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date oderDate;
 
@@ -77,6 +85,17 @@ public class Order implements Serializable {
     @Column(name = "status")
     private int status;
 
-//    @OneToMany(mappedBy = "oder")
-//    private List<OderDetails> listOderDetails;
+    public String statusOrder() {
+        String tb="";
+        if (this.status == 1) {
+            tb = "Chờ thanh toán";
+        } else if (this.status == 2) {
+            tb = "Đã thanh toán";
+        }
+        return tb;
+    }
+
+    public Object[] toDataRow() {
+        return new Object[]{orderCode, "Tuan", totalMoney, statusOrder(), created, paymentDate, "Tuans"};
+    }
 }
