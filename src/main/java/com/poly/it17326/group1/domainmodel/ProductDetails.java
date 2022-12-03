@@ -39,7 +39,7 @@ public class ProductDetails implements Serializable {
     @Column(name = "id")
     private String id;
 
-    @Column(name = "product_details_id")
+    @Column(name = "product_details_code")
     private String productDetailsCode;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -47,7 +47,7 @@ public class ProductDetails implements Serializable {
     private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_color")
+    @JoinColumn(name = "id_color", referencedColumnName = "id")
     private Color color;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -62,8 +62,8 @@ public class ProductDetails implements Serializable {
     @JoinColumn(name = "id_unit")
     private Unit unit;
 
-    @Column(name = "")
-    private int quantity;
+    @Column(name = "figure")
+    private int figure;
 
     @Column(name = "price")
     private BigDecimal price;
@@ -71,7 +71,7 @@ public class ProductDetails implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "product_active")
+    @Column(name = "active")
     private Boolean active;
 
     @Column(name = "created")
@@ -85,12 +85,6 @@ public class ProductDetails implements Serializable {
     @Column(name = "deleted")
     private Boolean deleted;
 
-    @Column(name = "status")
-    private int status;
-
-//    @OneToMany(mappedBy = "productDetails")
-//    private List<OderDetails> listOrderDetails;
-
-    @OneToMany(mappedBy = "productDetails")
-    private List<Images> listImages;
+//    @Column(name = "status")
+//    private int status;
 }

@@ -55,7 +55,7 @@ public class Color {
     @Column(name = "deleted")
     private Boolean deleted;
     
-    @Column(name = "status" )
-    private Integer status;
+//    @Column(name = "status" )
+//    private Integer status;
     
 }
