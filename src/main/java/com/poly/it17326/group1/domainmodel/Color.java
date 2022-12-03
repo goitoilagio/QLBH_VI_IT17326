@@ -6,8 +6,12 @@ package com.poly.it17326.group1.domainmodel;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -28,21 +32,20 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Table(name="Color")
+@Table(name = "Color")
 public class Color {
 
     @Id
     @Column(name = "id")
-    private String id;
+    @GeneratedValue
+    private UUID id;
 
     @Column(name = "color_code")
-    private String categoryCode;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer colorCode;
 
     @Column(name = "color_name")
-    private String categoryName;
-
-//    @OneToMany(mappedBy = "color")
-//    private List<ProductDetails> listProductDetails;
+    private String colorName;
 
     @Column(name = "created")
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -54,8 +57,11 @@ public class Color {
 
     @Column(name = "deleted")
     private Boolean deleted;
-    
-    @Column(name = "status" )
+
+    @Column(name = "status")
     private Integer status;
-    
+
+    @OneToMany(mappedBy = "color",fetch = FetchType.EAGER)
+    private List<ProductDetails> listProductDetails;
+
 }

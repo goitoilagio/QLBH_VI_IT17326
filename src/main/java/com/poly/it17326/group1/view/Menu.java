@@ -22,6 +22,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         //Gọi Màn
+        setLocationRelativeTo(null);
         BanHang banHang = new BanHang();
         HoaDon hoaDon = new HoaDon();
         //Add Màn vào Màn Cha
@@ -68,15 +69,12 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("jLabel1");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("jLabel2");
 
         btnBanHang.setBackground(new java.awt.Color(255, 255, 255));
         btnBanHang.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        btnBanHang.setForeground(new java.awt.Color(0, 0, 0));
         btnBanHang.setText("Bán Hàng");
         btnBanHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,32 +84,26 @@ public class Menu extends javax.swing.JFrame {
 
         btnKhuyenMai.setBackground(new java.awt.Color(255, 204, 204));
         btnKhuyenMai.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        btnKhuyenMai.setForeground(new java.awt.Color(0, 0, 0));
         btnKhuyenMai.setText("Khuyến Mại");
 
         btnNhanVien.setBackground(new java.awt.Color(255, 204, 204));
         btnNhanVien.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        btnNhanVien.setForeground(new java.awt.Color(0, 0, 0));
         btnNhanVien.setText("Nhân Viên");
 
         btnThongKe.setBackground(new java.awt.Color(255, 204, 204));
         btnThongKe.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        btnThongKe.setForeground(new java.awt.Color(0, 0, 0));
         btnThongKe.setText("Thống Kê");
 
         btnThoat.setBackground(new java.awt.Color(255, 204, 204));
         btnThoat.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        btnThoat.setForeground(new java.awt.Color(0, 0, 0));
         btnThoat.setText("Thoát");
 
         btnSanPham.setBackground(new java.awt.Color(255, 204, 204));
         btnSanPham.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        btnSanPham.setForeground(new java.awt.Color(0, 0, 0));
         btnSanPham.setText("Sản Phẩm");
 
         btnHoaDon.setBackground(new java.awt.Color(255, 204, 204));
         btnHoaDon.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        btnHoaDon.setForeground(new java.awt.Color(0, 0, 0));
         btnHoaDon.setText("Hóa Đơn");
         btnHoaDon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,10 +111,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
         jLabel21.setText("Đồng hồ");
 
-        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setText("Ngày Tháng Năm");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -157,9 +147,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnBanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)

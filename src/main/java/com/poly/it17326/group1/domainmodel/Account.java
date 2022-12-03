@@ -6,6 +6,7 @@ package com.poly.it17326.group1.domainmodel;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,37 +35,37 @@ public class Account implements Serializable {
 
     @Id
     @Column(name = "id")
-    private String id;
-    
+    private UUID id;
+
     @Column(name = "staff_code")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int staffCode;
-    
+    private Integer staffCode;
+
     @Column(name = "id_position")
     private Position position;
-    
+
     @Column(name = "staff_name")
     private String staffName;
-    
+
     @Column(name = "birtday")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date birtDay;
-    
+
     @Column(name = "sex")
     private Boolean sex;
-    
+
     @Column(name = "cccd")
     private String cccd;
-    
+
     @Column(name = "staff_address")
     private String staffAddress;
-    
+
     @Column(name = "staff_images")
     private String staffImages;
-    
+
     @Column(name = "password")
     private String password;
-    
+
     @Column(name = "created")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created;

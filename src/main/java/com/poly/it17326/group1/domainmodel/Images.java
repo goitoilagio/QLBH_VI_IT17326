@@ -5,8 +5,11 @@
 package com.poly.it17326.group1.domainmodel;
 
 import java.util.Date;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -34,10 +37,12 @@ public class Images {
 
     @Id
     @Column(name = "id")
-    private String id;
+    @GeneratedValue
+    private UUID id;
 
     @Column(name = "images_code")
-    private String image_code;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer image_code;
 
     @Column(name = "url")
     private String url;

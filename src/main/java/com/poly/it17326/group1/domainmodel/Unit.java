@@ -7,8 +7,11 @@ package com.poly.it17326.group1.domainmodel;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -34,10 +37,12 @@ public class Unit implements Serializable {
 
     @Id
     @Column(name = "id")
-    private String id;
+    @GeneratedValue
+    private UUID id;
 
     @Column(name = "unit_code")
-    private String unitCode;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer unitCode;
 
     @Column(name = "unit_name")
     private String unitName;
@@ -55,7 +60,7 @@ public class Unit implements Serializable {
 
     @Column(name = "status")
     private int status;
-    
+
     @OneToMany(mappedBy = "unit")
     private List<ProductDetails> listProductDetails;
 }
