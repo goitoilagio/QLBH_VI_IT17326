@@ -25,15 +25,19 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         BanHang banHang = new BanHang();
         HoaDon hoaDon = new HoaDon();
+        SanPham sanPham = new SanPham();
         //Add Màn vào Màn Cha
         Cha.add(banHang);
         Cha.add(hoaDon);
+        Cha.add(sanPham);
         //Add màn vào list
         listJP.add(banHang);//0
         listJP.add(hoaDon);//1
+        listJP.add(sanPham);//2
         ///Show mặc định
         listJP.get(0).show(true);
         listJP.get(1).show(false);
+        listJP.get(2).show(false);
     }
 
     /**
@@ -101,6 +105,11 @@ public class Menu extends javax.swing.JFrame {
         btnSanPham.setBackground(new java.awt.Color(255, 204, 204));
         btnSanPham.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         btnSanPham.setText("Sản Phẩm");
+        btnSanPham.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSanPhamActionPerformed(evt);
+            }
+        });
 
         btnHoaDon.setBackground(new java.awt.Color(255, 204, 204));
         btnHoaDon.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
@@ -208,12 +217,20 @@ public class Menu extends javax.swing.JFrame {
     private void btnBanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBanHangActionPerformed
         listJP.get(0).show(true);
         listJP.get(1).show(false);
+        listJP.get(2).show(false);
     }//GEN-LAST:event_btnBanHangActionPerformed
 
     private void btnHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHoaDonActionPerformed
         listJP.get(0).show(false);
         listJP.get(1).show(true);
+        listJP.get(2).show(false);
     }//GEN-LAST:event_btnHoaDonActionPerformed
+
+    private void btnSanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSanPhamActionPerformed
+        listJP.get(0).show(false);
+        listJP.get(1).show(false);
+        listJP.get(2).show(true);
+    }//GEN-LAST:event_btnSanPhamActionPerformed
 
     /**
      * @param args the command line arguments

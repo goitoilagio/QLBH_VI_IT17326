@@ -47,9 +47,15 @@ public class ProductDetails implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_category")
     private Category category;
+<<<<<<< HEAD
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_color", referencedColumnName = "id")
+=======
     
     @ManyToOne
     @JoinColumn(name = "id_color")
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965
     private Color color;
     
     @ManyToOne
@@ -64,6 +70,12 @@ public class ProductDetails implements Serializable {
     @JoinColumn(name = "id_unit")
     private Unit unit;
 
+<<<<<<< HEAD
+    @Column(name = "figure")
+    private int figure;
+
+=======
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965
     @Column(name = "price")
     private BigDecimal price;
 
@@ -87,6 +99,10 @@ public class ProductDetails implements Serializable {
     @Column(name = "deleted")
     private Boolean deleted;
 
+<<<<<<< HEAD
+//    @Column(name = "status")
+//    private int status;
+=======
     @Column(name = "status")
     private int status;
 
@@ -98,4 +114,5 @@ public class ProductDetails implements Serializable {
     public Object[] toDataRow() {
         return new Object[]{productDetailsCode, product.getProductName(), category.getCategoryName(), color.getColorName(), fabric.getFabricName(), unit.getUnitName(), price, figure};
     }
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965
 }

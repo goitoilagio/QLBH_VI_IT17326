@@ -4,6 +4,15 @@
  */
 package com.poly.it17326.group1.config;
 
+<<<<<<< HEAD
+import com.poly.it17326.group1.domainmodel.Category;
+import com.poly.it17326.group1.domainmodel.Fabric;
+import com.poly.it17326.group1.domainmodel.Images;
+import com.poly.it17326.group1.domainmodel.Product;
+import com.poly.it17326.group1.domainmodel.ProductDetails;
+import com.poly.it17326.group1.domainmodel.Unit;
+import java.awt.Color;
+=======
 import com.poly.it17326.group1.domainmodel.Account;
 import com.poly.it17326.group1.domainmodel.Category;
 import com.poly.it17326.group1.domainmodel.Color;
@@ -16,6 +25,7 @@ import com.poly.it17326.group1.domainmodel.Position;
 import com.poly.it17326.group1.domainmodel.Product;
 import com.poly.it17326.group1.domainmodel.ProductDetails;
 import com.poly.it17326.group1.domainmodel.Unit;
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -50,11 +60,14 @@ public class HibernateUtil {
         conf.addAnnotatedClass(Product.class);
         conf.addAnnotatedClass(Unit.class);
         conf.addAnnotatedClass(ProductDetails.class);
+<<<<<<< HEAD
+=======
         conf.addAnnotatedClass(Order.class);
         conf.addAnnotatedClass(OrderDetails.class);
         conf.addAnnotatedClass(Account.class);
         conf.addAnnotatedClass(Position.class);
         conf.addAnnotatedClass(Customer.class);
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();

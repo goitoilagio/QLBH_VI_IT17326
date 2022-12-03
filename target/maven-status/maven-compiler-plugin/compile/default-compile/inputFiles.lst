@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Fabric.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\view\SanPham.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\view\HoaDon.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\view\HoaDonChiTiet.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\view\BanHang.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\OderDetails.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Order.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Unit.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\repository\CategoryRepository.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Images.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Position.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Category.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\ProductDetails.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\view\DangNhap.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\view\Menu.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Account.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\config\HibernateUtil.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Customer.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Color.java
+D:\FPT Polytechnic\ChiuRoiDay\src\main\java\com\poly\it17326\group1\domainmodel\Product.java
+=======
 D:\Tai Lieu\JavaCore\DUAN\src\main\java\com\poly\it17326\group1\domainmodel\Product.java
 D:\Tai Lieu\JavaCore\DUAN\src\main\java\com\poly\it17326\group1\view\HoaDon.java
 D:\Tai Lieu\JavaCore\DUAN\src\main\java\com\poly\it17326\group1\service\iplm\ManageProductDetailsServiceIplm.java
@@ -27,3 +49,4 @@ D:\Tai Lieu\JavaCore\DUAN\src\main\java\com\poly\it17326\group1\domainmodel\Prod
 D:\Tai Lieu\JavaCore\DUAN\src\main\java\com\poly\it17326\group1\domainmodel\Customer.java
 D:\Tai Lieu\JavaCore\DUAN\src\main\java\com\poly\it17326\group1\repositories\iplm\OrderRepositoriIplm.java
 D:\Tai Lieu\JavaCore\DUAN\src\main\java\com\poly\it17326\group1\repositories\iplm\ProductDetailsRepositoryIplm.java
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965

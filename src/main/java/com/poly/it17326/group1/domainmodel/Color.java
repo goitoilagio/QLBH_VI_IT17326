@@ -57,6 +57,12 @@ public class Color {
 
     @Column(name = "deleted")
     private Boolean deleted;
+<<<<<<< HEAD
+    
+//    @Column(name = "status" )
+//    private Integer status;
+    
+=======
 
     @Column(name = "status")
     private Integer status;
@@ -64,4 +70,5 @@ public class Color {
     @OneToMany(mappedBy = "color",fetch = FetchType.EAGER)
     private List<ProductDetails> listProductDetails;
 
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965
 }
