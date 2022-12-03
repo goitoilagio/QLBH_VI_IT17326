@@ -27,34 +27,31 @@ import lombok.ToString;
  * @author goito
  */
 @Entity
-@Table(name = "OderDetails")
+@Table(name = "OrderDetails")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class OderDetails implements Serializable {
+public class OrderDetails implements Serializable {
 
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @ManyToOne
+    @JoinColumn(name = "id_order")
+    private Order oder;
 
-    @Column(name = "oder_details_code")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int oderDetailsCode;
-    
+    @Id
     @ManyToOne
     @JoinColumn(name = "id_product_details")
     private ProductDetails productDetails;
 
-    @ManyToOne
-    @JoinColumn(name = "id_oder")
-    private Order oder;
-    
+    @Column(name = "order_details_code")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer oderDetailsCode;
+
     @Column(name = "figure")
     private int figure;
-    
+
     @Column(name = "price")
     private BigDecimal price;
 
@@ -71,5 +68,10 @@ public class OderDetails implements Serializable {
 
     @Column(name = "status")
     private int status;
+
+
+    public Object[] toDataRow() {
+        return new Object[] {"",productDetails.getProduct().getProductName(),productDetails.getUnit().getUnitName(),figure,productDetails.getPrice(),productDetails.getPrice()};
+    }
 
 }

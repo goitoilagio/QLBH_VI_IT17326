@@ -7,8 +7,11 @@ package com.poly.it17326.group1.domainmodel;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -34,10 +37,12 @@ public class Product implements Serializable {
 
     @Id
     @Column(name = "id")
-    private String id;
+    @GeneratedValue
+    private UUID id;
 
     @Column(name = "product_code")
-    private String productCode;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer productCode;
 
     @Column(name = "product_name")
     private String productName;

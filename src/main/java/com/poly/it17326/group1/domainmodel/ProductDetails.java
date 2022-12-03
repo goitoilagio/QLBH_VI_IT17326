@@ -8,9 +8,11 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -37,36 +39,48 @@ public class ProductDetails implements Serializable {
 
     @Id
     @Column(name = "id")
-    private String id;
+    @GeneratedValue
+    private UUID id;
 
     @Column(name = "product_details_code")
     private String productDetailsCode;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_category")
     private Category category;
+<<<<<<< HEAD
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_color", referencedColumnName = "id")
+=======
+    
+    @ManyToOne
+    @JoinColumn(name = "id_color")
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965
     private Color color;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @ManyToOne
     @JoinColumn(name = "id_product")
     private Product product;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @ManyToOne
     @JoinColumn(name = "id_fabric")
     private Fabric fabric;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @ManyToOne
     @JoinColumn(name = "id_unit")
     private Unit unit;
 
+<<<<<<< HEAD
     @Column(name = "figure")
     private int figure;
 
+=======
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965
     @Column(name = "price")
     private BigDecimal price;
+
+    @Column(name = "figure")
+    private int figure;
 
     @Column(name = "description")
     private String description;
@@ -85,6 +99,20 @@ public class ProductDetails implements Serializable {
     @Column(name = "deleted")
     private Boolean deleted;
 
+<<<<<<< HEAD
 //    @Column(name = "status")
 //    private int status;
+=======
+    @Column(name = "status")
+    private int status;
+
+//    @OneToMany(mappedBy = "productDetails")
+//    private List<OderDetails> listOrderDetails;
+    @OneToMany(mappedBy = "productDetails")
+    private List<Images> listImages;
+
+    public Object[] toDataRow() {
+        return new Object[]{productDetailsCode, product.getProductName(), category.getCategoryName(), color.getColorName(), fabric.getFabricName(), unit.getUnitName(), price, figure};
+    }
+>>>>>>> c8b9141eb7ccda78b3616b908981855292401965
 }
